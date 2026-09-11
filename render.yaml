@@ -11,7 +11,9 @@ services:
         generateValue: true
       - key: CLIENT_ORIGIN
         value: https://syncan-client.onrender.com
-  - type: static
+
+  - type: web
+    runtime: static
     name: syncan-client
     rootDir: client
     buildCommand: npm ci && npm run build
