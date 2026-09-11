@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: syncan-server
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CLIENT_ORIGIN
+        value: https://syncan-client.onrender.com
+  - type: static
+    name: syncan-client
+    rootDir: client
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://syncan-server.onrender.com
+      - key: VITE_WS_URL
+        value: wss://syncan-server.onrender.com
