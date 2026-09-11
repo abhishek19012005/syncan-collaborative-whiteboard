@@ -81,3 +81,13 @@ git branch -M main
 git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
 git push -u origin main
 ```
+# SYNCAN — Real-Time Collaborative Whiteboard
+
+Live Demo:
+https://syncan.onrender.com
+
+Backend:
+https://syncan-server.onrender.com
+
+GitHub:
+https://github.com/abhishek19012005/syncan-collaborative-whiteboard
